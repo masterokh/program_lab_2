@@ -45,9 +45,9 @@ uint1024_t scanf_our(char *s) {
 int add(int a, int b, uint8_t *carry) {
     int res;
     res = a + b + *carry;
-    if (res > 999999999) {
+    if (res > 1e9 - 1) {
         *carry = 1;
-        res -= 1000000000;
+        res -= 1e9;
         }
     else {
         *carry = 0;
@@ -69,7 +69,7 @@ int sub(int a, int b, uint8_t *carry) {
     res = a - b - *carry;
     if (res < 0) {
         *carry = 1;
-        res += 1000000000;
+        res += 1e9;
     }
     else {
         *carry = 0;
